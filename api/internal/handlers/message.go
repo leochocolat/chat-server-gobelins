@@ -111,7 +111,7 @@ func (h messageHandler) CreateMessage(writer http.ResponseWriter, request *http.
 		ID: req.Channel,
 	}
 
-	var meta json.RawMessage
+	meta := json.RawMessage("{}")
 	namespacedMeta := make(map[string]json.RawMessage)
 	if req.Metadata != nil {
 		namespace := internal.GetNamespace(ctx)
